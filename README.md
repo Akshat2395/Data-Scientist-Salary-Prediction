@@ -35,3 +35,4 @@ The mean of the numerical column data is used to replace null values when the da
 ### 2. Data Exploration - Key Findings
 **Distribution of gender**
 
+![GitHub Logo](/images/Gender of Respondents.png)
