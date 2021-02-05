@@ -49,7 +49,7 @@ We can analyze from this plot that the majority of respondents were Data Scienti
 
 **Level of education**
 
-<img src="https://github.com/Akshat2395/Data-Scientist-Salary-Prediction/blob/main/images/Education_of_respondents.png" alt="Gender of Respondents" width="1200" height="600">
+<img src="https://github.com/Akshat2395/Data-Scientist-Salary-Prediction/blob/main/images/Education_of_respondents.png" alt="Gender of Respondents" width="1500" height="400">
 
 The graph obtained above represents the number of respondents from various educational backgrounds. We can see that maximum number of respondents have a Master's degree followed by that of Bachelor's degree and Doctoral degree.
 
