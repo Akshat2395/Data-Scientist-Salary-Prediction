@@ -34,12 +34,14 @@ The mean of the numerical column data is used to replace null values when the da
 
 ### 2. Data Exploration - Key Findings
 **Distribution of gender**
+
 <img src="https://github.com/Akshat2395/Data-Scientist-Salary-Prediction/blob/main/images/Gender_of_Respondents.png" alt="Gender of Respondents" width="700" height="600">
 
 This plot represents the gender of repondents. From this plot, we can say that the majority were Male with 83.8% of total respondents.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 **Gender distribution w.r.t job profile**
+
 <img src="https://github.com/Akshat2395/Data-Scientist-Salary-Prediction/blob/main/images/Gender_distribution_wrt_job_profile.png" alt="Gender of Respondents" width="700" height="600">
 
 We can analyze from this plot that the majority of respondents were Data Scientists and males dominated each job profile. In the chart females and males show a similar distribution.
