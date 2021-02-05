@@ -39,10 +39,37 @@ The mean of the numerical column data is used to replace null values when the da
 
 This plot represents the gender of repondents. From this plot, we can say that the majority were Male with 83.8% of total respondents.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 **Gender distribution w.r.t job profile**
 
-<img src="https://github.com/Akshat2395/Data-Scientist-Salary-Prediction/blob/main/images/Gender_distribution_wrt_job_profile.png" alt="Gender of Respondents" width="700" height="600">
+<img src="https://github.com/Akshat2395/Data-Scientist-Salary-Prediction/blob/main/images/Gender_distribution_wrt_job_profile.png" alt="Gender of Respondents" width="900" height="600">
 
 We can analyze from this plot that the majority of respondents were Data Scientists and males dominated each job profile. In the chart females and males show a similar distribution.
 
+
+**Level of education**
+
+<img src="https://github.com/Akshat2395/Data-Scientist-Salary-Prediction/blob/main/images/Education_of_respondents.png" alt="Gender of Respondents" width="900" height="600">
+
+The graph obtained above represents the number of respondents from various educational backgrounds. We can see that maximum number of respondents have a Master's degree followed by that of Bachelor's degree and Doctoral degree.
+
+
+**Country Distribution of Data Scientist by Gender**
+
+<img src="https://github.com/Akshat2395/Data-Scientist-Salary-Prediction/blob/main/images/Country_distrbution_of_data_scientists.png" alt="Gender of Respondents" width="900" height="600">
+
+The bar plot describes the country distribution of data scientists by gender. The maximum number of data scientists reside in United States of America and the majority of them are males. After USA, India holds the 2nd highest number of data scientists and this role is male dominated there too. We can also see that there is a vast difference in number of respondents who are data scientists in the entire world.
+
+
+**Salary Distribution of Data Scientist by Gender**
+
+<img src="https://github.com/Akshat2395/Data-Scientist-Salary-Prediction/blob/main/images/Salary_distribution_among_data_scientists.png" alt="Gender of Respondents" width="900" height="600">
+
+The above interactive graph represents the yearly compensation of data scientists by their gender. The maximum number of repondents have a yearly compensation of 0-9,999 USD $. We can say that the respondents were not comfortable in sharing their true salary. As the choices for this question were in USD, the conversion of one currency to another might also lead to misclassification of data.
+
+
+**Age group and sex ratio of the responders**
+
+<img src="https://github.com/Akshat2395/Data-Scientist-Salary-Prediction/blob/main/images/Age_vs_Sex_ratio.png" alt="Gender of Respondents" width="900" height="600">
+
+25-29 and 30-34 age groups gave the most responses in the survey and most of them were males
