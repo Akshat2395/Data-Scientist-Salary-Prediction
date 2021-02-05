@@ -81,18 +81,62 @@ The above interactive graph represents the yearly compensation of data scientist
 
 Feature engineering is the process of using domain knowledge of the data to create features that make machine learning algorithms work. If feature engineering is done correctly, it increases the predictive power of machine learning algorithms by creating features from raw data that help facilitate the machine learning process.
 
-**ENCODING - Converting categorical data into numbers**
-
-We observe that both ordinal (which can be ordered) and nominal (which cannot be ordered) data is present in our data set, hence we need to perform label encoding on ordinal and one hot encoding on nominal data.
-**Label Encoder**
-
-Sklearn provides a very efficient tool for encoding the levels of categorical features into numeric values. LabelEncoder encode labels with a value between 0 and n_classes-1 where n is the number of distinct labels.
-
-**Ordinal Data** - Ordinal data is a categorical, statistical data type where the variables have natural, ordered categories and the distances between the categories is not known. In this example, the age brackets , salary buckets, work experience year brackets...etc all are ordinal categorical data which can be label encoded
-**One Hot Encoder**
-
-One hot encoding takes a column which has categorical data, which has been label encoded and then splits the column into multiple columns. The numbers are replaced by 1s and 0s, depending on which column has what value.
-
-**Nominal Data** - nominal data cannot be ordered and cannot be measured. In this case, gender, profession, country...etc all are nominal categorical data which can be one hot encoded
-
 The problem is that with label encoding, the categories now have natural ordered relationships. The computer does this because it’s programmed to treat higher numbers as higher numbers; it will naturally give the higher numbers higher weights.
+
+1. Correlation Matrix - 
+
+A correlation matrix is a table showing correlation coefficients between variables. Each cell in the table shows the correlation between two variables. A correlation matrix is used to summarize data, as an input into a more advanced analysis, and as a diagnostic for advanced analyses. It is used to summarize a large amount of data where the goal is to see patterns. For our example, the observable pattern will show us how the variables will correlate with each other.
+A threhold value of 0.1 and greater gives us 43 columns which are related to the target column.
+
+2. Lasso CV - 
+
+LASSO is a regression analysis method that performs both variable selection and regularization in order to enhance the prediction accuracy and interpretability of the statistical model it produces.
+For the same threhold value as 0.1, this method gives us 105 columns
+
+3. PCA - 
+
+As the number of important features selected by LASSO is quite large (105 features), I will be using a dimensionality reduction technique called PCA (Principal component analysis). It is a statistical procedure that uses an orthogonal transformation to convert a set of observations of possibly correlated variables into a set of values of linearly uncorrelated variables called principal components. Such dimensionality reduction can be a very useful step for visualising and processing high-dimensional datasets, while still retaining as much of the variance in the dataset as possible.
+
+We can find out that by using only 92 columns, we can achieve a cumulative explained variance of 95% which I considered to be enough to build our ML model.
+
+### 4. Model Implementation
+
+Here we will apply Logistic regression to build our classification model. 
+
+**Logistic Regrression**
+
+The logistic model is used to model the probability of a certain class or event existing such as pass/fail or win/lose. Logistic Regression is used when the dependent variable(target) is categorical. There are times where we need to classify whether a certain scenario is considered as class 0 or class 1 which is in the case of a binary classification regression. For such models, linear regression can be used. But for the linear regression to work, there is a need for setting up a threshold based on which classification can be done. For our example, it can be inferred that linear regression is not suitable for classification problem.
+
+Logistic regression is named for the function used at the core of the method, the logistic function. It’s an S-shaped curve that can take any real-valued number and map it into a value between 0 and 1, but never exactly at those limits.
+
+Due to the properties of logistic regression, we cannot directly apply it on our model as it contains more than just 2 classes (15 in our case). The logistic function is only able to classy the data between 2 classes, either 0 or 1. So, we will divide the labels in such a way that we can use logistic regression multiple times, each time classifying between one class vs. the rest. As our target data is ordered, we cannot use one vs. rest method to solve this as it will consider one label as class 0 and the rest of them as class 1.
+
+Simply applying logistic regression for classification results to an accuracy of 38.21%.
+
+### 5. Model Tuning
+
+Hyperparameters are important because they directly control the behaviour of the training algorithm and have a significant impact on the performance of the model being trained. The process of finding the best parameters for our model is called hyperparameter tuning. It can be done by various algorithms but here, we will be using Grid Search which trains the algorithm for all combinations by using the two set of hyperparameters (learning rate and number of layers) and measures the performance using “Cross Validation” technique. This validation technique gives assurance that our trained model got most of the patterns from the dataset. One of the best methods to do validation by using “K-Fold Cross Validation” which helps to provide ample data for training the model and ample data for validations.
+
+Accuracy before tuning:  38.21 %
+Accuracy after tuning:  38.4 %
+
+Hyperparameter tuning results in 0.2% increase in accuracy. The accuracy seems low but it is actually acceptable because we are predicting 1 class among 8.
+
+When it comes to classification, accuracy is not considered an ideal metric to identify the performance of the model. 
+
+### 6. Discussion
+
+**Confusion Matrix**
+
+A confusion matrix is a table that is often used to describe the performance of a classification model on a set of test data for which the true values are known. It allows the visualization of the performance of an algorithm.
+
+The confusion matrix is usually useful for binary classification models where the model has to classify between class 0 and class 1. It is extremely useful for measuring Recall, Precision, Specificity, Accuracy and most importantly AUC-ROC Curve. As our model consists of 15 different classes, we can use this technique to determine only the precision, recall and f1-score.
+
+In our dataset, the maximum number of respondents' yearly compensation lie in the range 0-9,999 USD which outnumbers all the other salary ranges. Due to this, the target data becomes skewed as there are more number of class 0's and quite less for other classes. As seen from the confusion matrix, the relation between true value of label 0 and predicted value of label 0 is very high in comparison to other predictions. We can also see that the recall scores for all the classes except for class 0 are quite low. Hence the model suffers from high bias.
+
+
+### 7. Conclusion 
+
+The accuracy can be increased by further grouping the salary brackets. Also, other feature selection techniques such as chi square can be applied to check the affect on accuracy and tuning the respective hyper-parameters.
+
+The accuracy can be further increased if the analysis would have been done per country, this would reduce the variance in the data and errors being added due to different money buying power in different countries. This creates an error of perspective, as the buying power of 1 dollar is differnt in Canada when compared to India
