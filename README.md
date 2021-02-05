@@ -73,3 +73,26 @@ The above interactive graph represents the yearly compensation of data scientist
 <img src="https://github.com/Akshat2395/Data-Scientist-Salary-Prediction/blob/main/images/Age_vs_Sex_ratio.png" alt="Gender of Respondents" width="1000" height="600">
 
 25-29 and 30-34 age groups gave the most responses in the survey and most of them were males
+
+
+### 3. Feature Selection
+
+**How does feature engineering useful in machine learning?**
+
+Feature engineering is the process of using domain knowledge of the data to create features that make machine learning algorithms work. If feature engineering is done correctly, it increases the predictive power of machine learning algorithms by creating features from raw data that help facilitate the machine learning process.
+
+**ENCODING - Converting categorical data into numbers**
+
+We observe that both ordinal (which can be ordered) and nominal (which cannot be ordered) data is present in our data set, hence we need to perform label encoding on ordinal and one hot encoding on nominal data.
+**Label Encoder**
+
+Sklearn provides a very efficient tool for encoding the levels of categorical features into numeric values. LabelEncoder encode labels with a value between 0 and n_classes-1 where n is the number of distinct labels.
+
+**Ordinal Data** - Ordinal data is a categorical, statistical data type where the variables have natural, ordered categories and the distances between the categories is not known. In this example, the age brackets , salary buckets, work experience year brackets...etc all are ordinal categorical data which can be label encoded
+**One Hot Encoder**
+
+One hot encoding takes a column which has categorical data, which has been label encoded and then splits the column into multiple columns. The numbers are replaced by 1s and 0s, depending on which column has what value.
+
+**Nominal Data** - nominal data cannot be ordered and cannot be measured. In this case, gender, profession, country...etc all are nominal categorical data which can be one hot encoded
+
+The problem is that with label encoding, the categories now have natural ordered relationships. The computer does this because it’s programmed to treat higher numbers as higher numbers; it will naturally give the higher numbers higher weights.
