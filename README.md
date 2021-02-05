@@ -118,6 +118,7 @@ Simply applying logistic regression for classification results to an accuracy of
 Hyperparameters are important because they directly control the behaviour of the training algorithm and have a significant impact on the performance of the model being trained. The process of finding the best parameters for our model is called hyperparameter tuning. It can be done by various algorithms but here, we will be using Grid Search which trains the algorithm for all combinations by using the two set of hyperparameters (learning rate and number of layers) and measures the performance using “Cross Validation” technique. This validation technique gives assurance that our trained model got most of the patterns from the dataset. One of the best methods to do validation by using “K-Fold Cross Validation” which helps to provide ample data for training the model and ample data for validations.
 
 Accuracy before tuning:  38.21 %
+
 Accuracy after tuning:  38.4 %
 
 Hyperparameter tuning results in 0.2% increase in accuracy. The accuracy seems low but it is actually acceptable because we are predicting 1 class among 8.
