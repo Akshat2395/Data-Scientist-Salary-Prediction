@@ -37,7 +37,7 @@ The mean of the numerical column data is used to replace null values when the da
 
 ![Gender of Respondents](/images/Gender_of_Respondents.png)
 
-<img src="" alt="Gender of Respondents" width="10" height="10">
+<img src="https://github.com/Akshat2395/Data-Scientist-Salary-Prediction/blob/main/images/Gender_of_Respondents.png" alt="Gender of Respondents" width="10" height="10">
 
 This plot represents the gender of repondents. From this plot, we can say that the majority were Male with 83.8% of total respondents.
 
