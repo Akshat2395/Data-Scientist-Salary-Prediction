@@ -35,7 +35,9 @@ The mean of the numerical column data is used to replace null values when the da
 ### 2. Data Exploration - Key Findings
 **Distribution of gender**
 
-![Gender of Respondents](/images/Gender_of_Respondents.png =10x)
+![Gender of Respondents](/images/Gender_of_Respondents.png)
+
+<img src="" alt="Gender of Respondents" width="10" height="10">
 
 This plot represents the gender of repondents. From this plot, we can say that the majority were Male with 83.8% of total respondents.
 
