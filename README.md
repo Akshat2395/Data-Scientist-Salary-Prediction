@@ -35,10 +35,10 @@ The mean of the numerical column data is used to replace null values when the da
 ### 2. Data Exploration - Key Findings
 **Distribution of gender**
 
-![Gender of Respondents](/images/.png)
+![Gender of Respondents](/images/Gender_of_Respondents.png)
 
 <img
-src=“images/Gender of Respondents.png”
+src=“images/Gender_of_Respondents.png”
 raw=true
 alt=“Subject Pronouns”
 style=“margin-right: 10px;”
